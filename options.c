@@ -147,7 +147,7 @@ void parse_options(int argc, char **argv)
 	_options.slideshow = 0;
 	_options.framerate = 0;
 
-	_options.fullscreen = false;
+	_options.fullscreen = true;
 	_options.embed = 0;
 	_options.hide_bar = false;
 	_options.geometry = NULL;
