@@ -16,8 +16,9 @@ HAVE_INOTIFY = $(OPT_DEP_DEFAULT)
 HAVE_LIBFONTS = $(OPT_DEP_DEFAULT)
 HAVE_LIBEXIF  = $(OPT_DEP_DEFAULT)
 
-# CFLAGS, any additional compiler flags goes here
-CFLAGS = -Wall -pedantic -O2 -DNDEBUG
+CC = gcc
+# CFLAGS, any additional compiler flags go here
+CFLAGS += -Wall -pedantic -O2 -DNDEBUG
 # Uncomment for a debug build using gcc/clang
 # CFLAGS = -Wall -pedantic -DDEBUG -g3 -fsanitize=address,undefined
 # LDFLAGS = $(CFLAGS)
@@ -26,7 +27,7 @@ CFLAGS = -Wall -pedantic -O2 -DNDEBUG
 ICONS = 16x16.png 32x32.png 48x48.png 64x64.png 128x128.png
 
 # Uncomment on OpenBSD
-# HAVE_INOTIFY = 0
+HAVE_INOTIFY = 0
 # lib_fonts_bsd_0 =
 # lib_fonts_bsd_1 = -lfreetype -L/usr/X11R6/lib/freetype2
 # inc_fonts_bsd_0 =

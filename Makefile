@@ -9,6 +9,8 @@ lib_fonts_1 = -lXft -lfontconfig
 lib_exif_0 =
 lib_exif_1 = -lexif
 
+PREFIX=/usr/local
+
 nsxiv_cppflags = -D_XOPEN_SOURCE=700 \
   -DHAVE_LIBEXIF=$(HAVE_LIBEXIF) -DHAVE_LIBFONTS=$(HAVE_LIBFONTS) \
   -DHAVE_INOTIFY=$(HAVE_INOTIFY) $(inc_fonts_$(HAVE_LIBFONTS)) \
@@ -89,9 +91,9 @@ install: all
 		etc/nsxiv.1 >$(DESTDIR)$(MANPREFIX)/man1/nsxiv.1
 	chmod 644 $(DESTDIR)$(MANPREFIX)/man1/nsxiv.1
 	@echo "INSTALL share/nsxiv/"
-	mkdir -p $(DESTDIR)$(EGPREFIX)
-	cp etc/examples/* $(DESTDIR)$(EGPREFIX)
-	chmod 755 $(DESTDIR)$(EGPREFIX)/*
+	#mkdir -p $(DESTDIR)$(EGPREFIX)
+	#cp etc/examples/* $(DESTDIR)$(EGPREFIX)
+	#chmod 755 $(DESTDIR)$(EGPREFIX)/*
 
 uninstall: uninstall-icon
 	@echo "REMOVE bin/nsxiv"
